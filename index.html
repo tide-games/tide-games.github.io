@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tide-games — the fleet</title>
+<meta name="description" content="Games that share one sea: one key, one sealed balance, every game honors it. Pure static, every pixel from code, provably fair where chance sails.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="tide-games — the fleet">
+<meta property="og:description" content="Games that share one sea: one key, one sealed balance, every game honors it. Pure static, provably fair where chance sails.">
+<meta property="og:url" content="https://tide-games.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E🌊%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --paper:#f7f1e3; --paper-2:#efe6d2; --ink:#232e38; --ink-soft:#5c6a76;
+    --line:#d9cdb4; --accent:#1e6f8e; --gold:#b8860b;
+    --serif:"Iowan Old Style",Palatino,Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;padding:0;color:var(--ink);
+    background:
+      radial-gradient(1100px 460px at 50% -160px, #fdf9ee 0%, var(--paper) 55%),
+      var(--paper);
+    font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+    min-height:100vh;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:26px 18px 48px}
+  header h1{font:700 40px/1.1 var(--serif);letter-spacing:.05em;margin:.2em 0 .1em}
+  header .tagline{color:var(--ink-soft);font-style:italic;font-family:var(--serif);font-size:19px;margin:0}
+  .lede{margin:18px 0 6px;color:var(--ink-soft);line-height:1.6}
+  .lede a{color:var(--accent)}
+  h2{
+    font:700 14px/1 system-ui;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink-soft);margin:34px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  }
+  .game{
+    display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:center;
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:14px;margin:0 0 14px;box-shadow:0 1px 3px rgba(35,46,56,.07);
+  }
+  @media (max-width:640px){.game{grid-template-columns:1fr}}
+  .shot{
+    width:100%;aspect-ratio:1200/630;object-fit:cover;border-radius:9px;
+    border:1px solid var(--line);display:block;background:var(--paper-2);
+  }
+  .game h3{margin:0 0 4px;font:700 22px/1.2 var(--serif)}
+  .game h3 .flag{margin-right:6px}
+  .game p{margin:0 0 10px;color:var(--ink-soft);line-height:1.55}
+  .links{display:flex;gap:14px;align-items:center;font-weight:600}
+  .links a.play{
+    color:#fff;background:linear-gradient(#2a86a8,var(--accent));
+    padding:7px 16px;border-radius:9px;text-decoration:none;
+    box-shadow:0 5px 12px -6px rgba(30,111,142,.55);
+  }
+  .links a.play:hover{filter:brightness(1.06)}
+  .links a.src{color:var(--ink-soft);text-decoration:none;font-weight:500}
+  .links a.src:hover{color:var(--accent)}
+  .tag{
+    font-size:12px;padding:2.5px 9px;border-radius:999px;border:1px solid var(--line);
+    color:var(--ink-soft);font-weight:600;white-space:nowrap;
+  }
+  .tag.fair{border-color:#bcd7e4;background:#eef6fa;color:#23576d}
+  .tag.soon{border-color:#dcbf74;background:#fdf8ea;color:#8a6508}
+  .slipway{
+    display:flex;gap:14px;align-items:center;background:transparent;
+    border:1px dashed var(--line);border-radius:14px;padding:16px;color:var(--ink-soft);
+  }
+  .slipway .keel{font-size:30px}
+  footer{margin-top:38px;color:var(--ink-soft);font-size:14px;line-height:1.7;border-top:1px solid var(--line);padding-top:16px}
+  footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🌊 tide-games</h1>
+    <p class="tagline">games that share one sea</p>
+  </header>
+
+  <p class="lede">
+    One secp256k1 key is a <b>nostr identity</b>, a <b>Bitcoin address</b>, and a
+    <b>signer</b> — and your balance is a signed trail any game can verify, not a
+    number in anyone's database. Every game here is pure static, every pixel from
+    code, and where chance sails, <b>the next Bitcoin block decides</b> — nobody
+    knows the outcome before the tide comes in, and anyone can check it after.
+    The pattern is documented in
+    <a href="https://github.com/melvincarvalho/tideholm/blob/gh-pages/BUILDING-GAMES.md">BUILDING-GAMES.md</a>
+    — build a boat and join the fleet.
+  </p>
+
+  <h2>Setting sail</h2>
+
+  <div class="game">
+    <img class="shot" src="https://tide-games.github.io/regatta/og-image.png" alt="Five colored sailboats racing toward a checkered flag">
+    <div>
+      <h3><span class="flag">⛵</span>The Regatta <span class="tag fair">provably fair</span></h3>
+      <p>Bet on the boats — the next block runs the race. Five sails, posted odds,
+      a slow-motion photo finish, and a log where every result verifies in your
+      browser from public chain data.</p>
+      <div class="links">
+        <a class="play" href="https://tide-games.github.io/regatta/">Play →</a>
+        <a class="src" href="https://github.com/tide-games/regatta">[source]</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="game">
+    <svg class="shot" viewBox="0 0 1200 630" role="img" aria-label="Two dice on a tavern table">
+      <rect width="1200" height="630" fill="#2b2119"/>
+      <rect y="470" width="1200" height="160" fill="#3d2f21"/>
+      <circle cx="960" cy="120" r="70" fill="#f5e9c8" opacity=".12"/>
+      <g transform="translate(480,300) rotate(-8)">
+        <rect x="-70" y="-70" width="140" height="140" rx="22" fill="#f7f1e3" stroke="#d9cdb4" stroke-width="4"/>
+        <circle cx="-32" cy="-32" r="13" fill="#232e38"/><circle cx="32" cy="32" r="13" fill="#232e38"/>
+        <circle cx="32" cy="-32" r="13" fill="#232e38"/><circle cx="-32" cy="32" r="13" fill="#232e38"/>
+      </g>
+      <g transform="translate(700,330) rotate(12)">
+        <rect x="-70" y="-70" width="140" height="140" rx="22" fill="#f7f1e3" stroke="#d9cdb4" stroke-width="4"/>
+        <circle cx="0" cy="0" r="13" fill="#c94f4f"/>
+        <circle cx="-34" cy="-34" r="13" fill="#232e38"/><circle cx="34" cy="34" r="13" fill="#232e38"/>
+      </g>
+      <text x="600" y="560" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="40" fill="#c9b891">the next block rolls the dice</text>
+    </svg>
+    <div>
+      <h3><span class="flag">🎲</span>The Tavern <span class="tag fair">provably fair</span></h3>
+      <p>Tide Dice — stake on a roll seeded by the next block, verify every round
+      offline, and walk your winnings home on a signed slip. The venue that proved
+      the courier pattern.</p>
+      <div class="links">
+        <a class="play" href="https://melvincarvalho.github.io/tavern/">Play →</a>
+        <a class="src" href="https://github.com/melvincarvalho/tavern">[source]</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="game">
+    <img class="shot" src="https://nostr.social/tideholm/og-image.png" alt="Tideholm — an island empire seen from above">
+    <div>
+      <h3><span class="flag">🏝️</span>Tideholm <span class="tag">the home port</span></h3>
+      <p>The island empire the gold comes from — a slow-burn browser strategy game
+      in the classic early-2000s style. Raise your banner, seal your gold at the
+      Tidegate, and sail it into the fleet.</p>
+      <div class="links">
+        <a class="play" href="https://nostr.social/tideholm/">Play →</a>
+        <a class="src" href="https://github.com/melvincarvalho/tideholm">[source]</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>On the slipway</h2>
+
+  <div class="slipway">
+    <span class="keel">🪸</span>
+    <span><b>Reef Run</b> — chart your tiles before the tide; the block places the
+    reefs. Commit-ahead mines with odds you shape yourself. <span class="tag soon">laying the keel</span></span>
+  </div>
+
+  <footer>
+    <p>Everything gh-pages. No build steps, no assets, no custodians — balances are
+    signed trails keyed to your own nostr key, anchored to Bitcoin (testnet4 today).
+    Play money is play money and says so; sealed gold arrives game by game as the
+    <a href="https://github.com/melvincarvalho/tideholm/issues/154">trust rules</a> harden.</p>
+    <p>A <a href="https://github.com/tide-games">tide-games</a> production, from the
+    <a href="https://nostr.social/tideholm/">Tideholm</a> harbor.</p>
+  </footer>
+</div>
+</body>
+</html>
