@@ -70,6 +70,10 @@
   }
   .tag.fair{border-color:#bcd7e4;background:#eef6fa;color:#23576d}
   .tag.soon{border-color:#dcbf74;background:#fdf8ea;color:#8a6508}
+  /* seal-ready: this game understands the Tidegate's query params (?did=
+     &seal=&return=) — a sealed purse follows the player in. Only games
+     with real courier wiring may wear it. */
+  .tag.seal{border-color:#c9a24b;background:#fbf3dd;color:#6e5006}
   .slipway{
     display:flex;gap:14px;align-items:center;background:transparent;
     border:1px dashed var(--line);border-radius:14px;padding:16px;color:var(--ink-soft);
@@ -131,7 +135,7 @@
       <text x="600" y="560" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="40" fill="#c9b891">the next block rolls the dice</text>
     </svg>
     <div>
-      <h3><span class="flag">🎲</span>The Tavern <span class="tag fair">provably fair</span></h3>
+      <h3><span class="flag">🎲</span>The Tavern <span class="tag fair">provably fair</span> <span class="tag seal">⚓ seal-ready</span></h3>
       <p>Tide Dice — stake on a roll seeded by the next block, verify every round
       offline, and walk your winnings home on a signed slip. The venue that proved
       the courier pattern.</p>
@@ -217,5 +221,19 @@
     <a href="https://nostr.social/tideholm/">Tideholm</a> harbor.</p>
   </footer>
 </div>
+<script>
+  // The lobby is a dumb courier. Whatever query string a player arrives
+  // with — ?did=&seal=&return= from Tideholm's Tidegate, or anything the
+  // seal protocol grows later — is re-attached, unparsed, to every Play
+  // link. Games that understand the params use them (the ⚓ seal-ready
+  // badge marks which); the rest ignore them harmlessly. The lobby never
+  // interprets a single param: one seal implementation lives in the games,
+  // zero live here.
+  if (location.search.length > 1) {
+    document.querySelectorAll('a.play').forEach((a) => {
+      a.href += (a.href.includes('?') ? '&' : '?') + location.search.slice(1);
+    });
+  }
+</script>
 </body>
 </html>
